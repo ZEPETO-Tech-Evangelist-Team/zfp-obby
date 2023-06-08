@@ -1,0 +1,42 @@
+fileFormatVersion: 2
+guid: 20249db0b9f75164fa459d708e50bd54
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ItemCollectionManager_1 = require(\"./ItemCollectionManager\");\r\nclass UIManager
+    extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    constructor() {\r\n       
+    super(...arguments);\r\n        this.maxPoints = 10;\r\n        this.maxHealthIndex
+    = 2;\r\n        this.currentHealthIndex = 0;\r\n    }\r\n    Start() {\r\n       
+    ItemCollectionManager_1.default.GetInstance().AddListener((info) => { this.OnItemCollect(info);
+    });\r\n    }\r\n    OnItemCollect(info) {\r\n        if (info.tag == \"Point\")\r\n           
+    this.GetPoints(info.value);\r\n        else if (info.tag == \"Health\") {\r\n           
+    if (this.currentHealthIndex >= 0 && this.currentHealthIndex <= this.maxHealthIndex)
+    {\r\n                this.currentHealthIndex--;\r\n                this.SetHealthBar(this.currentHealthIndex,
+    true);\r\n            }\r\n        }\r\n        else if (info.tag == \"Enemy\")
+    {\r\n            if (this.currentHealthIndex < this.maxHealthIndex) {\r\n               
+    this.SetHealthBar(this.currentHealthIndex, false);\r\n                this.currentHealthIndex++;\r\n           
+    }\r\n        }\r\n    }\r\n    SetHealthBar(index, active) {\r\n        let bar
+    = this.healthBars[index];\r\n        if (active)\r\n            bar.sprite =
+    this.healthBarFull;\r\n        else\r\n            bar.sprite = this.healthBarEmpty;\r\n   
+    }\r\n    GetPoints(value) {\r\n        let curValue = this.points.size / this.maxPoints;\r\n       
+    this.points.size = curValue + (value / this.maxPoints);\r\n    }\r\n}\r\nexports.default
+    = UIManager;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVUlNYW5hZ2VyLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiVUlNYW5hZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUEsaURBQXFEO0FBQ3JELG1FQUFrRDtBQUdsRCxNQUFxQixTQUFVLFNBQVEscUNBQXFCO0lBQTVEOztRQUNXLGNBQVMsR0FBRyxFQUFFLENBQUM7UUFRZCxtQkFBYyxHQUFZLENBQUMsQ0FBQztRQUM1Qix1QkFBa0IsR0FBWSxDQUFDLENBQUM7SUE0QzVDLENBQUM7SUF6Q1UsS0FBSztRQUVSLCtCQUFXLENBQUMsV0FBVyxFQUFFLENBQUMsV0FBVyxDQUFDLENBQUMsSUFBSSxFQUFFLEVBQUUsR0FBRSxJQUFJLENBQUMsYUFBYSxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUEsQ0FBQyxDQUFDLENBQUM7SUFDakYsQ0FBQztJQUVNLGFBQWEsQ0FBQyxJQUFpQjtRQUVsQyxJQUFJLElBQUksQ0FBQyxHQUFHLElBQUksT0FBTztZQUNuQixJQUFJLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsQ0FBQzthQUMxQixJQUFJLElBQUksQ0FBQyxHQUFHLElBQUksUUFBUSxFQUM3QjtZQUNJLElBQUksSUFBSSxDQUFDLGtCQUFrQixJQUFJLENBQUMsSUFBSSxJQUFJLENBQUMsa0JBQWtCLElBQUksSUFBSSxDQUFDLGNBQWMsRUFDbEY7Z0JBQ0ksSUFBSSxDQUFDLGtCQUFrQixFQUFFLENBQUM7Z0JBQzFCLElBQUksQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLGtCQUFrQixFQUFFLElBQUksQ0FBQyxDQUFDO2FBQ3BEO1NBQ0o7YUFBTSxJQUFJLElBQUksQ0FBQyxHQUFHLElBQUksT0FBTyxFQUM5QjtZQUNJLElBQUksSUFBSSxDQUFDLGtCQUFrQixHQUFHLElBQUksQ0FBQyxjQUFjLEVBQ2pEO2dCQUNJLElBQUksQ0FBQyxZQUFZLENBQUMsSUFBSSxDQUFDLGtCQUFrQixFQUFFLEtBQUssQ0FBQyxDQUFDO2dCQUNsRCxJQUFJLENBQUMsa0JBQWtCLEVBQUUsQ0FBQzthQUM3QjtTQUNKO0lBRUwsQ0FBQztJQUVNLFlBQVksQ0FBQyxLQUFhLEVBQUUsTUFBZTtRQUU5QyxJQUFJLEdBQUcsR0FBVSxJQUFJLENBQUMsVUFBVSxDQUFDLEtBQUssQ0FBQyxDQUFDO1FBQ3hDLElBQUksTUFBTTtZQUNOLEdBQUcsQ0FBQyxNQUFNLEdBQUcsSUFBSSxDQUFDLGFBQWEsQ0FBQzs7WUFFaEMsR0FBRyxDQUFDLE1BQU0sR0FBRyxJQUFJLENBQUMsY0FBYyxDQUFDO0lBQ3pDLENBQUM7SUFFTSxTQUFTLENBQUMsS0FBYTtRQUUxQixJQUFJLFFBQVEsR0FBRyxJQUFJLENBQUMsTUFBTSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUMsU0FBUyxDQUFDO1FBQ2pELElBQUksQ0FBQyxNQUFNLENBQUMsSUFBSSxHQUFHLFFBQVEsR0FBRyxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUM7SUFDM0QsQ0FBQztDQUNKO0FBdERELDRCQXNEQyJ9","assetPath":"Assets/Scripts/UIManager.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"maxPoints","type":"System.Single","isArray":false,"initValue":["10"],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"healthBarFull","type":"UnityEngine.Sprite","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"healthBarEmpty","type":"UnityEngine.Sprite","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.UI","name":"healthBars","type":"UnityEngine.UI.Image[]","isArray":true,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.UI","name":"points","type":"UnityEngine.UI.Scrollbar","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"UIManager","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 118bd089799d1f9f278446e2b7fe129b
+  onlyWriteTrigger: 0

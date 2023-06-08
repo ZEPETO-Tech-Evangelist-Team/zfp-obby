@@ -1,0 +1,74 @@
+{
+    "name": "CustomInputAction",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "3563a525-cd5c-4549-992d-18edcfd94a95",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "PassThrough",
+                    "id": "dae5eea2-8a59-4f7d-88ec-1c7d64119b59",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "MoveTrigger",
+                    "type": "Button",
+                    "id": "eebbb1c0-5502-4489-8941-ecb679302515",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a65f3fb3-149f-4467-b30d-5f976bb701a8",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02df78c4-6f58-4892-bbed-fef25582f638",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7cd0a800-8ada-4ccf-a30c-635b615ae611",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "899f98d9-499b-404d-a23c-3eddbe636856",
+                    "path": "<Touchscreen>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveTrigger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
