@@ -1,11 +1,10 @@
-import {Collider, GameObject } from 'UnityEngine';
+import {AudioClip, Collider, GameObject } from 'UnityEngine';
 import {UnityAction$1, UnityEvent$1 } from 'UnityEngine.Events';
 import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 import ItemCollectionManager from './ItemCollectionManager';
 
 export default class ItemCollection extends ZepetoScriptBehaviour {
     public itemValue : number = 1;
-    
     private itemID: number = -1;
     
     public Awake()

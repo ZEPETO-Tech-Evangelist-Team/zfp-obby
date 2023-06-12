@@ -12,7 +12,7 @@ export default class CharacterSpawn extends ZepetoScriptBehaviour {
         info.position = this.spawnPoint.position;
         info.rotation = this.spawnPoint.rotation;
         ZepetoPlayers.instance.CreatePlayerWithUserId(WorldService.userId, info , true);
-        
+
         ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(() => {
             this.player = ZepetoPlayers.instance.LocalPlayer.zepetoPlayer;
             this.player.character.tag = "Player";
